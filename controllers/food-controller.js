@@ -1,4 +1,4 @@
-const { selectFood } = require('../Models/food-model')
+const { selectFood } = require('../models/food-model')
 
 console.log("TEST, controller")
 

@@ -1,6 +1,6 @@
 const express = require('express')
-const apiRouter = require('./Routers/api-router.js');
-const foodRouter = require('./Routers/food-router.js');
+const apiRouter = require('./routers/api-router.js');
+const foodRouter = require('./routers/food-router.js');
 const app = express()
 const port = 8080
 

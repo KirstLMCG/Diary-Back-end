@@ -1,5 +1,5 @@
 const foodRouter = require('express').Router();
-const { getFood } = require('../Controllers/food-controller')
+const { getFood } = require('../controllers/food-controller')
 
 foodRouter.get("/", function(req, res) {
   res.send('Hello World!')
