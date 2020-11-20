@@ -6,10 +6,10 @@ exports.getFlares = (req, res) => {
           res.status(200).send(flares)
 
       })
-    //   .catch (err => {
-    //       res.status(400).send(err.message)
-    //       console.log(err.message)
-    //   })
+      .catch (err => {
+          res.status(400).send(err.message)
+          console.log(err.message)
+      })
 }
 
 exports.getFlaresById = (req, res) => {
@@ -21,4 +21,21 @@ exports.getFlaresById = (req, res) => {
     .catch(err => {
         res.status(500).json({message: err.message})
     })
+}
+
+exports.postFlare = (req, res) => {
+    const newFlare = new Flare();
+    newFlare.head = req.body.head;
+    newFlare.neck = req.body.neck;
+    newFlare.hands = req.body.hands;
+    newFlare.arms = req.body.arms;
+    newFlare.stomach = req.body.stomach;
+    newFlare.back = req.body.back;
+    newFlare.legs = req.body.legs;
+    newFlare.feet = req.body.feet;
+    
+    newFlare.save().then(newFlare => {
+        res.send(newFlare)
+    })
+    
 }

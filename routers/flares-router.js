@@ -1,5 +1,5 @@
 const flaresRouter = require('express').Router();
-const { getFlares, getFlaresById } = require('../controllers/flares')
+const { getFlares, getFlaresById, postFlare } = require('../controllers/flares')
 
 flaresRouter
     .route("/")
@@ -11,6 +11,12 @@ flaresRouter
     .route("/:id")
     .get(getFlaresById, (req, res) => {
         res.send(req.params.id)
+    })
+    
+flaresRouter
+    .route("/")
+    .post(postFlare, (req, res) => {
+        res.send(req.body)
     })
     
       
