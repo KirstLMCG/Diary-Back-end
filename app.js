@@ -5,15 +5,8 @@ const flaresRouter = require('./routers/flares-router.js')
 const app = express()
 const mongoose = require('mongoose')
 
+// Connection to the Database
 mongoose.connect("mongodb://127.0.0.1:27017/diary", { useNewUrlParser: true }).then(() => console.log("connected")).catch((err) => console.log(err))
-
-
-//mongodb://127.0.0.1:27017/diary'
-const db = mongoose.connection;
-db.on('error', (error) => console.log(error))
-db.once('open', () => console.log('Successfully connected to the db'))
-
-// console.log(mongoose.connection.readyState)
 
 app.use(express.json())
 

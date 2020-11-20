@@ -1,5 +1,4 @@
 const mongoose = require('mongoose')
-// const Flare = require('../schemas/flares-schema.js')
 const Schema = mongoose.Schema;
 
 const flaresSchema = new Schema({

@@ -1,4 +1,4 @@
-const { selectFood } = require('../models/food-model')
+const { selectFood } = require('../models/food')
 
 exports.getFood = (req, res) => {
 

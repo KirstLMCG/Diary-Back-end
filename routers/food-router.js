@@ -1,5 +1,5 @@
 const foodRouter = require('express').Router();
-const { getFood } = require('../controllers/food-controller')
+const { getFood } = require('../controllers/foods')
 
 foodRouter
     .route("/")
