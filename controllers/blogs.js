@@ -11,3 +11,15 @@ exports.getBlogs = (req, res) => {
           console.log(err.message)
       })
 }
+
+exports.getBlogsById = (req, res) => {
+    const { id } = req.params
+    Blog.findById(id).then(blogid => {
+        res.status(200).send(blogid)
+   
+    })
+    .catch(err => {
+        res.status(500).json({message: err.message})
+    })
+}
+

@@ -1,5 +1,5 @@
 const blogsRouter = require('express').Router()
-const { getBlogs } = require('../controllers/blogs')
+const { getBlogs, getBlogsById } = require('../controllers/blogs')
 
 blogsRouter
     .route("/")
@@ -7,5 +7,10 @@ blogsRouter
         res.send(getBlogs)
     })
     
+blogsRouter
+    .route("/:id")
+    .get(getBlogsById, (req, res) => {
+        res.send(req.params)
+    })
 
 module.exports = blogsRouter;
