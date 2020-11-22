@@ -1,10 +1,16 @@
 const foodRouter = require('express').Router();
-const { getFood } = require('../controllers/foods')
+const { getFoods, getFoodById } = require('../controllers/foods')
 
 foodRouter
     .route("/")
-    .get(getFood, (req, res) => {
-        res.send(getFood)
+    .get(getFoods, (req, res) => {
+        res.send(getFoods)
+    })
+    
+    foodRouter
+    .route("/:id")
+    .get(getFoodById, (req, res) => {
+        res.send(req.params.id)
     })
       
 

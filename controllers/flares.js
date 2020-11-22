@@ -4,7 +4,7 @@ exports.getFlares = (req, res) => {
 
       Flare.find({}).then(flares => {
           res.status(200).send(flares)
-
+          
       })
       .catch (err => {
           res.status(400).send(err.message)
