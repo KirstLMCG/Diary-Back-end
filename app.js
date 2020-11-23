@@ -17,6 +17,8 @@ app.use("/foodtracking", foodRouter);
 app.use("/flaretracking", flaresRouter)
 app.use("/blog", blogsRouter)
 
-app.listen(process.env.PORT || 8080, () => {
-  console.log(`Server is listening`)
-})
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8080;
+}
+app.listen(port);
