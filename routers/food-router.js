@@ -1,5 +1,5 @@
 const foodRouter = require('express').Router();
-const { getFoods, getFoodById } = require('../controllers/foods')
+const { getFoods, getFoodById, postFood } = require('../controllers/foods')
 
 //get all food
 foodRouter
@@ -16,5 +16,10 @@ foodRouter
     })
       
 //post food
+    foodRouter
+    .route('/new')
+    .post(postFood, (req, res) => {
+        res.send(req.body)
+    })
 
 module.exports = foodRouter;

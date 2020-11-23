@@ -22,3 +22,17 @@ exports.getFoodById = (req, res) => {
         res.status(500).json({message: err.message})
     })
 }
+
+exports.postFood = (req, res) => {
+    const newFood = new Food();
+    newFood.breakfast = req.body.breakfast;
+    newFood.lunch = req.body.lunch;
+    newFood.dinner = req.body.dinner;
+    newFood.snacks = req.body.snacks;
+    
+    newFood.save().then(newFood => {
+        res.send(newFood)
+    }).catch(err => console.log(err))
+    
+    
+}
