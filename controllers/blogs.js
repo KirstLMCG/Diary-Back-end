@@ -23,3 +23,14 @@ exports.getBlogsById = (req, res) => {
     })
 }
 
+exports.postBlog = (req, res) => {
+    const newBlog = new Blog();
+    newBlog.description = req.body.description;
+    
+    newBlog.save().then(newBlog => {
+        res.send(newBlog)
+    }).catch(err => {
+        console.log(err)
+    })
+}
+
