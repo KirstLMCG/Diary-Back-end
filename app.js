@@ -11,6 +11,7 @@ mongoose.connect("mongodb://127.0.0.1:27017/diary", { useNewUrlParser: true }).t
 
 app.use(express.json())
 
+//routes
 app.use("/api", apiRouter);
 app.use("/foodtracking", foodRouter);
 app.use("/flaretracking", flaresRouter)

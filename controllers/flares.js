@@ -36,6 +36,6 @@ exports.postFlare = (req, res) => {
     
     newFlare.save().then(newFlare => {
         res.send(newFlare)
-    })
+    }).catch(err => console.log(err))
     
 }
