@@ -29,6 +29,7 @@ exports.postFood = (req, res) => {
     newFood.lunch = req.body.lunch;
     newFood.dinner = req.body.dinner;
     newFood.snacks = req.body.snacks;
+    // newFood.blog = '5fc0e62b06ce5a48a063201a'
     
     newFood.save().then(newFood => {
         res.send(newFood)

@@ -57,8 +57,12 @@ const flaresSchema = new Schema({
        required: true,
        default: Date.now,
        unique: true
-   }
+   },
    
+   blog: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Blog"
+    }
 })
 
 

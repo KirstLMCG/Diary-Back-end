@@ -25,8 +25,12 @@ const foodsSchema = new Schema({
         type: String,
         required: true,
         unique: true
-    }
+    },
     
+    blog: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Blog"
+    }
     
 })
 

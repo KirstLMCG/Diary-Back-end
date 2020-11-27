@@ -26,8 +26,8 @@ exports.getLatestBlog = (req, res) => {
 
 exports.getBlogsById = (req, res) => {
     const { id } = req.params
-    Blog.findById(id).then(blogid => {
-        res.status(200).send(blogid)
+    Blog.findById(id).then(blog => {
+        res.status(200).send(blog)
    
     })
     .catch(err => {

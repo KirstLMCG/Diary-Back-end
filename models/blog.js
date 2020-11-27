@@ -27,4 +27,5 @@ blogsSchema.plugin(uniqueValidator);
 
 const Blog = mongoose.model('Blog', blogsSchema)
 
+
 module.exports = Blog
