@@ -1,5 +1,5 @@
 const blogsRouter = require('express').Router()
-const { getBlogs, getBlogsById, postBlog, getLatestBlog } = require('../controllers/blogs')
+const { getBlogs, getBlogsById, postBlog, getLatestBlog, deleteBlog } = require('../controllers/blogs')
 
 //get all blogs
 blogsRouter
@@ -22,11 +22,17 @@ blogsRouter
         res.send(getLatestBlog)
     })
 
-//post food
+//post blog
 blogsRouter
     .route("/new")
     .post(postBlog, (req, res) => {
         res.send(req.body)
     })
 
+//delete blog
+blogsRouter
+    .route("/:id")
+    .delete(deleteBlog, (req, res) => {
+        res.send(req.params)
+    })
 module.exports = blogsRouter;

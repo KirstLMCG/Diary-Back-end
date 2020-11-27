@@ -46,3 +46,14 @@ exports.postBlog = (req, res) => {
     })
 }
 
+exports.deleteBlog = (req, res) => {
+    const { id } = req.params
+    
+    Blog.findByIdAndRemove(id).exec().then(blog => {
+       if (!blog) {
+           return res.status(400).end() }
+        return res.status(200).end()
+    }).catch(err => {
+        console.log(err)
+    })
+}
