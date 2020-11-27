@@ -1,5 +1,5 @@
 const blogsRouter = require('express').Router()
-const { getBlogs, getBlogsById, postBlog } = require('../controllers/blogs')
+const { getBlogs, getBlogsById, postBlog, getLatestBlog } = require('../controllers/blogs')
 
 //get all blogs
 blogsRouter
@@ -13,6 +13,13 @@ blogsRouter
     .route("/:id")
     .get(getBlogsById, (req, res) => {
         res.send(req.params)
+    })
+    
+// Get latest blog
+blogsRouter
+    .route("/latest")
+    .get(getLatestBlog, (req, res) => {
+        res.send(getLatestBlog)
     })
 
 //post food

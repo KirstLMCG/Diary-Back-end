@@ -18,8 +18,7 @@ const blogsSchema = new Schema({
     description: {
         
         type: String,
-        required: true,
-        unique: true
+        required: true
     }
     
 })
