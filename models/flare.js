@@ -6,61 +6,52 @@ const flaresSchema = new Schema({
     
    head: {
       type: Number,
-      required: true,
-      unique: true
+      required: true
    },
    
    neck: {
        type: Number,
-       required: true,
-       unique: true
+       required: true
    },
    
    hands: {
        type: Number,
-       required: true,
-       unique: true
+       required: true
    },
    
    arms: {
        type: Number,
-       required: true,
-       unique: true
+       required: true
    },
    
    stomach: {
        type: Number,
-       required: true,
-       unique: true
+       required: true
    },
    
    back: {
        type: Number,
-       required: true,
-       unique: true
+       required: true
    },
    
    legs: {
        type: Number,
-       required: true,
-       unique: true
+       required: true
    },
    
    feet: {
        type: Number,
-       required: true,
-       unique: true
+       required: true
    },
    
    date: {
        type: Date,
        required: true,
-       default: Date.now,
-       unique: true
+       default: Date.now
    },
    
    blog: {
-      type: mongoose.Schema.Types.ObjectId,
+      type: Schema.Types.ObjectId,
       ref: "Blog"
     }
 })

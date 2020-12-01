@@ -1,5 +1,5 @@
 const blogsRouter = require('express').Router()
-const { getBlogs, getBlogsById, postBlog, getLatestBlog, deleteBlog } = require('../controllers/blogs')
+const { getBlogs, getBlogsById, postBlog, getLatestBlog, deleteBlog, postFlareToBlog, getFlaresByBlogId, getFoodByBlogId, postFoodToBlog } = require('../controllers/blogs')
 
 //get all blogs
 blogsRouter
@@ -35,4 +35,33 @@ blogsRouter
     .delete(deleteBlog, (req, res) => {
         res.send(req.params)
     })
-module.exports = blogsRouter;
+module.exports = blogsRouter
+
+//Post Flare to Blog
+blogsRouter
+  .route('/:id/flaretracking')
+  .post(postFlareToBlog, (req, res) => {
+      res.send(postFlareToBlog)
+  })
+  
+blogsRouter
+    .route("/:id/flares")
+    .get(getFlaresByBlogId, (req, res) => {
+        res.send(req.params.id)
+    })
+    
+ blogsRouter
+    .route("/:id/food")
+    .get(getFoodByBlogId, (req, res) => {
+        res.send(req.params.id)
+    })
+    
+ blogsRouter
+   .route('/:id/foodtracking')
+   .post(postFoodToBlog, (req, res) => {
+       res.send(postFoodToBlog)
+   })
+    
+  
+
+

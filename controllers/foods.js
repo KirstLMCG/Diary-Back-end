@@ -37,3 +37,5 @@ exports.postFood = (req, res) => {
     
     
 }
+
+//  GET all food by Blog ID

@@ -25,15 +25,15 @@ exports.getFlaresById = (req, res) => {
 
 exports.postFlare = (req, res) => {
     const newFlare = new Flare();
-    newFlare.head = 2
-    newFlare.neck = 2
-    newFlare.hands = 2
-    newFlare.arms = 2
-    newFlare.stomach = 2
-    newFlare.back = 2
-    newFlare.legs = 2
-    newFlare.feet = 2
-    newFlare.blog = '5fc0e62b06ce5a48a063201a'
+    newFlare.head = req.body.head
+    newFlare.neck = req.body.neck
+    newFlare.hands = req.body.hands
+    newFlare.arms = req.body.arms
+    newFlare.stomach = req.body.stomach
+    newFlare.back = req.body.back
+    newFlare.legs = req.body.legs
+    newFlare.feet = req.body.feet
+    newFlare.blog = req.params.id
 
     
     newFlare.save().then(newFlare => {

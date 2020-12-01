@@ -19,8 +19,12 @@ const blogsSchema = new Schema({
         
         type: String,
         required: true
-    }
+    },
     
+    flares: [{
+        type: Schema.Types.ObjectId,
+        ref: "Flare",
+    }]
 })
 
 blogsSchema.plugin(uniqueValidator);
